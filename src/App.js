@@ -1,12 +1,13 @@
 import React from "react";
-import "./App.css";
 import Nav from "./components/Nav/Nav";
+import Shows from "./components/Shows/Shows";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Nav />
-      <div style={{height: "100px"}}></div>
+      <Shows />
     </div>
   );
 }

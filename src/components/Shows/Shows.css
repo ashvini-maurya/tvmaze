@@ -1,0 +1,26 @@
+.shows {
+  color: #fff;
+  margin-left: 10px;
+}
+
+.shows h1 {
+  padding: 10px;
+}
+
+.shows__posters {
+  display: flex;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.shows__poster {
+  object-fit: contain;
+  max-height: 250px;
+  transition: transform 450ms;
+  margin-bottom: 10px;
+}
+
+.shows__poster:hover {
+  transform: scale(1.08);
+}
