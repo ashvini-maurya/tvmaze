@@ -3,10 +3,13 @@ import "./Shows.css";
 import axios from "../../axios";
 import requests from "../../requests";
 import Banner from "../Banner/Banner";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import Nav from "../Nav/Nav";
 
 const Shows = () => {
   const [shows, setShows] = useState([]);
   const [banner, setBanner] = useState([]);
+  const [favorite, setFavorite] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -24,20 +27,33 @@ const Shows = () => {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   };
 
+  const addToFavorite = (show) => {
+    console.log("addToFavorite clicked: ", show);
+    setFavorite([...favorite, show]);
+  };
+
+  console.log("favorite: ", favorite);
+
   return (
     <>
+      <Nav favorite={favorite} />
       <Banner banner={banner} truncate={truncate} />
       <div className="shows">
         <h1>Show Index</h1>
 
         <div className="shows__posters">
           {shows.map((show) => (
-            <img
-              key={show.id}
-              className="shows__poster"
-              src={`${show.image.medium}`}
-              alt={show.name}
-            />
+            <div className="shows__poster" key={show.id}>
+              <img
+                className="shows__posterImage"
+                src={`${show.image.medium}`}
+                alt={show.name}
+              />
+              <FavoriteIcon
+                className="shows__posterFavIcon"
+                onClick={() => addToFavorite(show)}
+              />
+            </div>
           ))}
         </div>
       </div>

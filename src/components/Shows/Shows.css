@@ -15,12 +15,23 @@
 }
 
 .shows__poster {
+  position: relative;
+}
+
+.shows__posterImage {
   object-fit: contain;
   max-height: 250px;
   transition: transform 450ms;
   margin-bottom: 10px;
 }
 
-.shows__poster:hover {
+.shows__posterImage:hover {
   transform: scale(1.08);
+}
+
+.shows__posterFavIcon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
 }

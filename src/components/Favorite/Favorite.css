@@ -1,0 +1,9 @@
+.favorite {
+  float: right;
+}
+
+.favoriteIcon {
+  position: fixed;
+  right: 20px;
+  color: red !important;
+}

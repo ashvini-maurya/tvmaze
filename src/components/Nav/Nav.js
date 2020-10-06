@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Nav.css";
+import Favorite from "../Favorite/Favorite";
 
-const Nav = () => {
+const Nav = (props) => {
   const [show, handleShow] = useState(false);
 
   useEffect(() => {
@@ -25,11 +26,9 @@ const Nav = () => {
         alt="TVmaze Logo"
       />
 
-      <img
-        className="nav__avatar"
-        src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
-        alt="TVmaze Avatar"
-      />
+      {props.favorite?.length > 0 ? (
+        <Favorite favorite={props.favorite} />
+      ) : null}
     </div>
   );
 };
