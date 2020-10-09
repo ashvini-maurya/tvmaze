@@ -28,15 +28,12 @@ const Shows = () => {
   };
 
   const addToFavorite = (show) => {
-    console.log("addToFavorite clicked: ", show);
     setFavorite([...favorite, show]);
   };
 
   const removeFromFavorite = (fav) => {
     setFavorite([...favorite.filter((item) => item.id !== fav.id)]);
   };
-
-  console.log("favorite: ", favorite);
 
   return (
     <>
@@ -53,10 +50,18 @@ const Shows = () => {
                 src={`${show.image.medium}`}
                 alt={show.name}
               />
-              <FavoriteIcon
-                className="shows__posterFavIcon"
-                onClick={() => addToFavorite(show)}
-              />
+
+              {favorite.some((item) => item.id === show.id) ? (
+                <FavoriteIcon
+                  className="shows__posterFavoritedIcon"
+                  onClick={() => removeFromFavorite(show)}
+                />
+              ) : (
+                <FavoriteIcon
+                  className="shows__posterFavIcon"
+                  onClick={() => addToFavorite(show)}
+                />
+              )}
             </div>
           ))}
         </div>

@@ -35,3 +35,12 @@
   right: 8px;
   cursor: pointer;
 }
+
+
+.shows__posterFavoritedIcon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  color: red;
+}

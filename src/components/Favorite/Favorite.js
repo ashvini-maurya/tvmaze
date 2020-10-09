@@ -62,7 +62,7 @@ const Favorite = (props) => {
             tabIndex={-1}
           >
             <List dense>
-              {props.favorite.map((fav) => {
+              {props?.favorite?.map((fav) => {
                 return (
                   <ListItem key={fav.id} button>
                     <ListItemAvatar>
