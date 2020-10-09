@@ -32,11 +32,15 @@ const Shows = () => {
     setFavorite([...favorite, show]);
   };
 
+  const removeFromFavorite = (fav) => {
+    setFavorite([...favorite.filter((item) => item.id !== fav.id)]);
+  };
+
   console.log("favorite: ", favorite);
 
   return (
     <>
-      <Nav favorite={favorite} />
+      <Nav favorite={favorite} removeFromFavorite={removeFromFavorite} />
       <Banner banner={banner} truncate={truncate} />
       <div className="shows">
         <h1>Show Index</h1>

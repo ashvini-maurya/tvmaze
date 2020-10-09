@@ -52,6 +52,7 @@ const Favorite = (props) => {
         scroll={scroll}
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
+        className="favoriteModal"
       >
         <DialogTitle id="scroll-dialog-title">Favorites</DialogTitle>
         <DialogContent dividers={scroll === "paper"}>
@@ -70,12 +71,12 @@ const Favorite = (props) => {
                         src={`${fav.image.medium}`}
                       />
                     </ListItemAvatar>
-                    <ListItemText
-                      primary={`${fav.name}`}
-                    />
+                    <ListItemText primary={`${fav.name}`} />
                     <ListItemSecondaryAction>
                       <IconButton edge="end" aria-label="delete">
-                        <DeleteIcon />
+                        <DeleteIcon
+                          onClick={() => props.removeFromFavorite(fav)}
+                        />
                       </IconButton>
                     </ListItemSecondaryAction>
                   </ListItem>

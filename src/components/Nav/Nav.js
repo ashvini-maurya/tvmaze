@@ -27,7 +27,10 @@ const Nav = (props) => {
       />
 
       {props.favorite?.length > 0 ? (
-        <Favorite favorite={props.favorite} />
+        <Favorite
+          favorite={props.favorite}
+          removeFromFavorite={props.removeFromFavorite}
+        />
       ) : null}
     </div>
   );
