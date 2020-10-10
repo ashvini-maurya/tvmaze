@@ -73,10 +73,12 @@ const Favorite = (props) => {
                     </ListItemAvatar>
                     <ListItemText primary={`${fav.name}`} />
                     <ListItemSecondaryAction>
-                      <IconButton edge="end" aria-label="delete">
-                        <DeleteIcon
-                          onClick={() => props.removeFromFavorite(fav)}
-                        />
+                      <IconButton
+                        edge="end"
+                        aria-label="delete"
+                        onClick={() => props.removeFromFavorite(fav)}
+                      >
+                        <DeleteIcon />
                       </IconButton>
                     </ListItemSecondaryAction>
                   </ListItem>
